@@ -61,6 +61,12 @@ h1 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
+@media (min-width: 768px) {
+    img {
+        width: 20%;
+    }
+}
+
 .nom {
     font-family: 'Dancing Script', cursive;
     color: #671163;
