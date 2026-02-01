@@ -116,6 +116,15 @@ h1 {
     }
 }
 
+/* Apply animation only once (forwards) */
 .gift {
     animation: bouncyAppear 2.5s ease-out forwards;
+    transform-style: preserve-3d;
+    transform: translateY(20px) scale(0.5); /* Initial state */
+}
+
+/* Hover effect (only after animation completes) */
+.gift:hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
 }
