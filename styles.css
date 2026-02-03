@@ -3,7 +3,6 @@ body {
     padding: 0;
     height: 100vh; /* Full viewport height */
     width: 100vw; /* Full viewport width */
-    overflow: hidden; /* Prevent scrollbars */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +46,6 @@ body {
     position: absolute;
     width: 80%;
     height: 90%;
-    top: 5%;
     left: 10%;
     background-color: white;
     border-radius: 20px;
