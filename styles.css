@@ -2,14 +2,17 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
+    width: 100vw; /* Full viewport width */
     overflow: hidden; /* Prevent scrollbars */
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom right, #ff7777, #ffaaee); /* Pink (#ff69b4) to white (#ffffff) gradient */
+    background: linear-gradient(
+        to bottom right,
+        #ff7777,
+        #ffaaee
+    ); /* Pink (#ff69b4) to white (#ffffff) gradient */
 }
-
 
 .heart-container {
     position: fixed; /* Fixed positioning to cover the entire viewport */
@@ -44,17 +47,19 @@ body {
     position: absolute;
     width: 80%;
     height: 90%;
+    top: 5%;
     left: 10%;
     background-color: white;
     border-radius: 20px;
     box-shadow:
-            0 0 10px rgba(0, 0, 0, 0.5), /* Soft glow */
-            0 0 20px rgba(255, 255, 255, 0.3); /* Larger blur */
+        0 0 10px rgba(0, 0, 0, 0.5),
+        /* Soft glow */ 0 0 20px rgba(255, 255, 255, 0.3); /* Larger blur */
     overflow-y: scroll;
+    padding: 2%;
 }
 
 h1 {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     color: #ff69b4;
     text-align: center;
     margin-bottom: 2rem;
@@ -69,7 +74,7 @@ h1 {
 }
 
 .nom {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     color: #671163;
     text-align: center;
     margin-bottom: 1.75rem;
@@ -78,7 +83,7 @@ h1 {
 }
 
 .msg {
-    font-family: 'Dancing Script', Serif;
+    font-family: "Dancing Script", Serif;
     color: #2a2428;
     text-align: center;
     margin-bottom: 2rem;
@@ -88,19 +93,17 @@ h1 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 .msg-gros {
-    font-family: 'Dancing Script', Serif;
+    font-family: "Dancing Script", Serif;
     color: #2a2428;
     text-align: center;
     margin-bottom: 0rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
     font-size: 4rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .surprise {
     text-align: center;
-    font-family: 'Dancing Script', Serif;
+    font-family: "Dancing Script", Serif;
     color: #2a2428;
     font-size: 1rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
@@ -108,7 +111,7 @@ h1 {
 
 .surprise-txt {
     text-align: center;
-    font-family: 'Dancing Script', Serif;
+    font-family: "Dancing Script", Serif;
     color: #ffb114;
     font-size: 1rem;
     text-shadow: 2px 2px 3px rgba(255, 125, 10, 0.15);
@@ -145,20 +148,42 @@ h1 {
 }
 
 .spin-scale {
-  animation: spinAndScale 0.5s forwards;
+    animation: spinAndScale 0.5s forwards;
 }
 
 @keyframes spinAndScale {
-  0% {
-    transform: rotate(0deg) scale(1);
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(180deg) scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Trigger the flash effect when the element is visible */
+.flash-element {
     opacity: 1;
-  }
-  50% {
-    transform: rotate(180deg) scale(1.5);
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(360deg) scale(2);
-    opacity: 0;
-  }
+    transform: scale(1.05); /* Slightly larger for a flash effect */
+    animation: flash 0.5s ease-out forwards;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
