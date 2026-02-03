@@ -3,12 +3,13 @@ body {
     padding: 0;
     height: 100vh; /* Full viewport height */
     width: 100vw;  /* Full viewport width */
-    overflow-x: hidden; /* Prevent scrollbars */
+    overflow: hidden; /* Prevent scrollbars */
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom right, #ff7777, #ffaaee); /* Pink (#ff69b4) to white (#ffffff) gradient */
 }
+
 
 .heart-container {
     position: fixed; /* Fixed positioning to cover the entire viewport */
@@ -42,12 +43,14 @@ body {
 .container {
     position: absolute;
     width: 80%;
+    height: 90%;
     left: 10%;
     background-color: white;
     border-radius: 20px;
     box-shadow:
             0 0 10px rgba(0, 0, 0, 0.5), /* Soft glow */
             0 0 20px rgba(255, 255, 255, 0.3); /* Larger blur */
+    overflow-y: scroll;
 }
 
 h1 {
@@ -84,8 +87,26 @@ h1 {
     font-size: 1rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
+.msg-gros {
+    font-family: 'Dancing Script', Serif;
+    color: #2a2428;
+    text-align: center;
+    margin-bottom: 0rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 4rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
 
 .surprise {
+    text-align: center;
+    font-family: 'Dancing Script', Serif;
+    color: #2a2428;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.surprise-txt {
     text-align: center;
     font-family: 'Dancing Script', Serif;
     color: #ffb114;
@@ -123,8 +144,21 @@ h1 {
     transform: translateY(20px) scale(0.5); /* Initial state */
 }
 
-/* Hover effect (only after animation completes) */
-.gift:hover {
-    transform: scale(1.5);
-    transition: transform 0.3s ease;
+.spin-scale {
+  animation: spinAndScale 0.5s forwards;
+}
+
+@keyframes spinAndScale {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(360deg) scale(2);
+    opacity: 0;
+  }
 }

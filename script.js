@@ -27,3 +27,17 @@ function createHeart() {
 
 // Génère un nouveau cœur toutes les 0.5 secondes
 setInterval(createHeart, 200);
+
+
+document.getElementById('gift').addEventListener('click', () => {
+    const element = document.getElementById('surprise');
+    // Apply spinning and scaling animation
+    element.classList.add('spin-scale');
+
+    // Change innerHTML after animation completes
+    setTimeout(() => {
+        element.innerHTML = '<div class="msg-gros">🌹Moi🌹</div><div class="msg-gros">👉🏻👈🏻</div><img id="gift" class="gift" src="img/moigrenouille.png" width=75%>';
+      element.classList.remove('spin-scale');
+    }, 500); // Match this with CSS transition duration
+
+});
