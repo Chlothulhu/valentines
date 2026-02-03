@@ -46,14 +46,12 @@ body {
     position: absolute;
     width: 80%;
     height: 90%;
-    left: 10%;
     background-color: white;
     border-radius: 20px;
     box-shadow:
         0 0 10px rgba(0, 0, 0, 0.5),
         /* Soft glow */ 0 0 20px rgba(255, 255, 255, 0.3); /* Larger blur */
     overflow-y: scroll;
-    padding: 2%;
 }
 
 h1 {
